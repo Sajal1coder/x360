@@ -1,0 +1,212 @@
+.view-360-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.view-360-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.view-360-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.view-360-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.view-360-content {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #f7fafc;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #4a5568;
+}
+
+.close-btn:hover {
+  background: #e2e8f0;
+  transform: scale(1.1);
+}
+
+.view-360-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.view-360-header h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.view-360-header p {
+  color: #718096;
+  font-size: 1rem;
+}
+
+.view-360-container {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  user-select: none;
+}
+
+.car-360-image {
+  transition: transform 0.1s ease-out;
+  perspective: 1000px;
+}
+
+.car-360-image img {
+  max-width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.rotation-indicator {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rotation-circle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: 3px solid #e2e8f0;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rotation-pointer {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: #667eea;
+  border-radius: 1px;
+  top: 5px;
+  left: 50%;
+  transform-origin: bottom center;
+  margin-left: -1px;
+  transition: transform 0.1s ease-out;
+}
+
+.rotation-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4a5568;
+  background: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.view-360-controls {
+  display: flex;
+  justify-content: center;
+}
+
+.reset-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: #5a67d8;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .view-360-content {
+    padding: 1.5rem;
+    margin: 10px;
+  }
+  
+  .view-360-container {
+    height: 300px;
+  }
+  
+  .car-360-image img {
+    max-height: 250px;
+  }
+  
+  .rotation-indicator {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .rotation-circle {
+    width: 50px;
+    height: 50px;
+  }
+}
